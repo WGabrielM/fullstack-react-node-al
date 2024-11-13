@@ -1,10 +1,10 @@
-const { Router } = require("express")
-const { getFavorite, postFavorite, deleteFavorite } = require("../controllers/favorite.js")
+import express from "express";
+import FavoriteController from "../controllers/favoriteController.js";
 
-const router = Router()
+const routes = express.Router();
 
-router.get('/', getFavorite)
-router.post('/:id', postFavorite)
-router.delete('/:id', deleteFavorite)
+routes.get("/", FavoriteController.getFavorites);
+routes.post("/:id", FavoriteController.postFavorite);
+routes.delete("/:id", FavoriteController.deleteFavorite);
 
-module.exports = router
+export default routes;
