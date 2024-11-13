@@ -5,7 +5,7 @@ const {
   postBook,
   patchBook,
   deleteBook,
-} = require("../../src/controllers/bookController.js");
+} = require("../controllers/bookController.js");
 
 const router = Router();
 

@@ -1,8 +1,16 @@
+import cors from "cors"
 import {express} from "express";
-
-const app = express();
+import routes from "./src/routes";
 
 const port = 8000;
+const app = express();
+
+app.use(express.json())
+app.use(cors({
+    origin: "*"
+}))
+
+routes(app);
 
 app.get("/", (req, res) => {
   res.send("Olá mundo!");
